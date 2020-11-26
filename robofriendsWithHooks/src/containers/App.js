@@ -22,7 +22,8 @@ function App() {
         fetch('https://jsonplaceholder.typicode.com/users')
         .then(response => response.json())
         .then(users => {setRobots( users )});
-    }, [])
+        console.log(count)
+    }, [count])
     // componentDidMount() {
     //     fetch('https://jsonplaceholder.typicode.com/users')
     //     .then(response => response.json())
@@ -41,7 +42,7 @@ function App() {
     (
         <div className='tc'>
             <h1 className='f2'>RoboFriends</h1>
-            <button onClick={() => setCount(count + 1)}> Click me! {count} </button>
+            <button onClick={() => setCount(count + 1)}> Click me!</button>
             <SearchBox searchChange={onSearchChange}/>
             <Scroll>
                 <CardList robots={filteredRobots}/>
